@@ -11,19 +11,27 @@ function StickyCartButton() {
   const { cart } = useCart();
   const cartCount = cart.reduce((sum, item) => sum + item.qty, 0);
   const navigate = useNavigate();
+  const [animate, setAnimate] = React.useState(false);
+  React.useEffect(() => {
+    if (cartCount > 0) {
+      setAnimate(true);
+      const timeout = setTimeout(() => setAnimate(false), 500);
+      return () => clearTimeout(timeout);
+    }
+  }, [cartCount]);
   return (
     <button
       onClick={() => navigate("/cart")}
-      className="fixed z-50 bottom-6 right-6 md:top-6 md:bottom-auto md:right-8 bg-green-700 hover:bg-green-800 text-white rounded-full shadow-lg flex items-center px-4 py-3 md:px-5 md:py-3 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-green-200"
+      className={`fixed z-50 bottom-6 right-6 bg-green-700 hover:bg-green-800 text-white rounded-full shadow-xl flex items-center px-6 py-4 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-green-200 text-lg font-bold ${animate ? 'animate-bounce' : ''}`}
       aria-label="View Cart"
-      style={{ boxShadow: "0 4px 24px rgba(34,197,94,0.15)" }}
+      style={{ boxShadow: "0 4px 24px rgba(34,197,94,0.18)", minWidth: 80 }}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7 mr-2">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 mr-2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437m0 0L6.6 9.75m-1.407-4.478h13.228c.885 0 1.542.86 1.319 1.711l-1.347 4.856a1.25 1.25 0 01-1.212.933H8.217m-1.407-4.478L8.217 15.75m0 0a2.25 2.25 0 104.5 0m-4.5 0h4.5" />
       </svg>
-      <span className="font-bold text-lg">Cart</span>
+      <span>Cart</span>
       {cartCount > 0 && (
-        <span className="ml-2 bg-white text-green-700 text-xs rounded-full px-2 py-0.5 font-bold border border-green-700">{cartCount}</span>
+        <span className="ml-2 bg-white text-green-700 text-sm rounded-full px-3 py-0.5 font-bold border border-green-700 shadow animate-pulse">{cartCount}</span>
       )}
     </button>
   );

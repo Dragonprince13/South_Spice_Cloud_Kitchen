@@ -9,15 +9,15 @@ export function useCart() {
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-  function addToCart(item) {
+  function addToCart(item, quantity = 1) {
     setCart((prev) => {
       const existing = prev.find((i) => i.name === item.name);
       if (existing) {
         return prev.map((i) =>
-          i.name === item.name ? { ...i, qty: i.qty + 1 } : i
+          i.name === item.name ? { ...i, qty: i.qty + quantity } : i
         );
       }
-      return [...prev, { ...item, qty: 1 }];
+      return [...prev, { ...item, qty: quantity }];
     });
   }
 

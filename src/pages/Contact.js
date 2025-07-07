@@ -2,39 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useCart } from "../CartContext";
 
-// EmailJS integration for sending orders via email (to be set up later)
-const sendOrderEmail = async (orderData) => {
-  try {
-    // You'll need to set up EmailJS account and replace these with your actual IDs
-    const serviceID = 'YOUR_EMAILJS_SERVICE_ID';
-    const templateID = 'YOUR_EMAILJS_TEMPLATE_ID';
-    const userID = 'YOUR_EMAILJS_USER_ID';
-    
-    const templateParams = {
-      to_email: 'orders@southspicecloud.com', // Your business email
-      customer_name: orderData.customerDetails.name,
-      customer_email: orderData.customerDetails.email,
-      customer_phone: orderData.customerDetails.phone || 'Not provided',
-      order_number: orderData.orderNumber,
-      order_date: new Date().toLocaleString(),
-      order_items: orderData.orderItems.map(item => 
-        `${item.name} x${item.qty} (${item.desc})`
-      ).join('\n'),
-      total_items: orderData.orderItems.reduce((sum, item) => sum + item.qty, 0),
-      order_summary: `Order #${orderData.orderNumber} - ${orderData.customerDetails.name} - ${orderData.orderItems.reduce((sum, item) => sum + item.qty, 0)} items`
-    };
-
-    // Uncomment this when you set up EmailJS
-    // await emailjs.send(serviceID, templateID, templateParams, userID);
-    
-    console.log('Order email would be sent with:', templateParams);
-    return true;
-  } catch (error) {
-    console.error('Failed to send order email:', error);
-    return false;
-  }
-};
-
 // Order Receipt Component
 function OrderReceipt({ customerDetails, orderItems, orderNumber }) {
   const totalItems = orderItems.reduce((sum, item) => sum + item.qty, 0);
@@ -210,21 +177,9 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     setSubmitted(true);
-    
-    // If there are items in cart, send order email
-    if (cart.length > 0) {
-      const orderData = {
-        customerDetails: form,
-        orderItems: cart,
-        orderNumber: orderNumber
-      };
-      
-      await sendOrderEmail(orderData);
-    }
-    
     clearCart();
   }
 

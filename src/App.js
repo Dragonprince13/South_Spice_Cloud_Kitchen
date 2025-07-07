@@ -7,10 +7,6 @@ import Contact from "./pages/Contact";
 import { CartProvider, useCart } from "./CartContext";
 import Cart from "./pages/Cart";
 
-// EmailJS initialization (to be set up later)
-// import emailjs from '@emailjs/browser';
-// emailjs.init('YOUR_EMAILJS_USER_ID');
-
 function StickyCartButton() {
   const { cart } = useCart();
   const cartCount = cart.reduce((sum, item) => sum + item.qty, 0);

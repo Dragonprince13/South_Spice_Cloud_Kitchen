@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useCart } from "../CartContext";
-import emailjs from '@emailjs/browser';
 
-// EmailJS integration for sending orders via email
+// EmailJS integration for sending orders via email (to be set up later)
 const sendOrderEmail = async (orderData) => {
   try {
     // You'll need to set up EmailJS account and replace these with your actual IDs

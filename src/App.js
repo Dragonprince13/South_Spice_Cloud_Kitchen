@@ -6,10 +6,10 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import { CartProvider, useCart } from "./CartContext";
 import Cart from "./pages/Cart";
-import emailjs from '@emailjs/browser';
 
-// Initialize EmailJS (replace with your actual User ID)
-emailjs.init('YOUR_EMAILJS_USER_ID');
+// EmailJS initialization (to be set up later)
+// import emailjs from '@emailjs/browser';
+// emailjs.init('YOUR_EMAILJS_USER_ID');
 
 function StickyCartButton() {
   const { cart } = useCart();

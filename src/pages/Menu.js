@@ -6,7 +6,6 @@ const menu = [
   {
     icon: "🥗",
     category: "Veg Starters",
-    image: "/veg starter.jpg",
     description: "Delight in our vegetarian starters, bursting with flavor and perfect for every occasion.",
     items: [
       { name: "Paneer 65", price: "€8.50" },
@@ -19,7 +18,6 @@ const menu = [
   {
     icon: "🍗",
     category: "Non-Veg Starters",
-    image: "/Non veg starters.jpg",
     description: "Start your meal with our mouthwatering non-veg appetizers, perfect for sharing or enjoying solo.",
     items: [
       { name: "Chilli Chicken", price: "€10.50" },
@@ -41,7 +39,6 @@ const menu = [
   {
     icon: "🍛",
     category: "Biryani",
-    image: "/Biryani.jpg",
     description: "Savor our signature biryanis, each cooked to perfection with aromatic rice and your choice of vegetables, chicken, mutton, prawns, or egg.",
     items: [
       { name: "Veg Dum Biryani", price: "€8.50" },
@@ -69,7 +66,6 @@ const menu = [
   {
     icon: "🍳",
     category: "Fried Rice",
-    image: "/Fried rice.jpg",
     description: "Satisfy your cravings with our selection of fried rice, made fresh to order.",
     items: [
       { name: "Chicken Fried Rice", price: "€10.50" },
@@ -81,7 +77,6 @@ const menu = [
   {
     icon: "🍽️",
     category: "Mandi",
-    image: "/Mandi.jpg",
     description: "Try our special mandi rice platters, served with a variety of delicious accompaniments.",
     items: [
       { name: "Mandi Rice with Chicken Fry piece and Chicken Gravy with Afghani Chicken / Egg", price: "€18.50" },
@@ -101,7 +96,6 @@ const menu = [
   {
     icon: "🍲",
     category: "Curries",
-    image: "/Curry.jpg",
     description: "Discover a range of rich, comforting curries, each simmered with authentic spices and fresh ingredients.",
     items: [
       { name: "Chicken Curry", price: "€13.50" },
@@ -158,7 +152,6 @@ const menu = [
   {
     icon: "🥯",
     category: "Naans",
-    image: "/Naans.jpg",
     description: "Pair your meal with our soft naans, rotis, and delicious breads, fresh from the tandoor.",
     items: [
       { name: "Butter Naan", price: "€2.00" },
@@ -208,7 +201,6 @@ const menu = [
   {
     icon: "🥤",
     category: "Milkshakes",
-    image: "/Milkshake.webp",
     description: "Try our delicious milkshakes in a variety of flavors.",
     items: [
       { name: "Pista Milkshake", price: "€5.80" },
@@ -240,7 +232,6 @@ const menu = [
   {
     icon: "🍰",
     category: "Sweet",
-    image: "/Sweet.jpg",
     description: "Finish your meal with a sweet treat.",
     items: [
       { name: "Kheer", price: "€3.80" },
@@ -259,8 +250,6 @@ export default function Menu() {
   const [quantities, setQuantities] = useState({});
   // State to track which items are selected/expanded
   const [selectedItems, setSelectedItems] = useState({});
-  // State to track image loading errors
-  const [imageErrors, setImageErrors] = useState({});
 
   // Scroll to section on nav click
   const handleNavClick = idx => {
@@ -312,14 +301,6 @@ export default function Menu() {
     }));
   };
 
-  // Handle image error
-  const handleImageError = (category) => {
-    setImageErrors(prev => ({
-      ...prev,
-      [category]: true
-    }));
-  };
-
   return (
     <div className="max-w-4xl mx-auto py-16 px-4">
       {/* Quick Navigation Bar */}
@@ -353,17 +334,6 @@ export default function Menu() {
             id={sectionIds[idx]}
             className="bg-white rounded-2xl shadow-lg p-6 border border-green-100 hover:shadow-2xl transition-all duration-200"
           >
-            {section.image && !imageErrors[section.category] && (
-              <div className="flex justify-center mb-4">
-                <img
-                  src={section.image}
-                  alt={section.category}
-                  className="w-full max-w-xs h-40 object-cover rounded-2xl shadow-md border-4 border-green-100"
-                  style={{ objectPosition: 'center' }}
-                  onError={() => handleImageError(section.category)}
-                />
-              </div>
-            )}
             <div className="flex items-center justify-center mb-2">
               <span className="text-3xl md:text-4xl mr-2" aria-label={section.category}>{section.icon}</span>
               <h3 className="text-2xl font-bold text-green-700 border-b pb-2 border-green-100 text-center uppercase tracking-wide flex-1">{section.category}</h3>
@@ -380,8 +350,8 @@ export default function Menu() {
                       onClick={() => toggleItemSelection(item.name)}
                     >
                       <div className="flex-1">
-                        <span className="font-bold text-green-800">{item.name}</span>
-                        <div className="text-sm text-green-600 font-semibold mt-1">{item.price}</div>
+                        <span className="font-bold text-green-800 text-lg">{item.name}</span>
+                        <div className="text-lg text-green-600 font-bold mt-1">{item.price}</div>
                       </div>
                       <span className="text-green-600 text-sm">
                         {isSelected ? '▼' : '▶'}

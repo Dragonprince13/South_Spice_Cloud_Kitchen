@@ -9,11 +9,11 @@ const menu = [
     image: "/veg starter.jpg",
     description: "Delight in our vegetarian starters, bursting with flavor and perfect for every occasion.",
     items: [
-      "Paneer 65",
-      "Mushroom Pepper",
-      "Mushroom Creamy",
-      "Soya 65",
-      "Gobi 65",
+      { name: "Paneer 65", price: "€8.50" },
+      { name: "Mushroom Pepper", price: "€7.50" },
+      { name: "Mushroom Creamy", price: "€8.00" },
+      { name: "Soya 65", price: "€7.00" },
+      { name: "Gobi 65", price: "€6.50" },
     ],
   },
   {
@@ -22,19 +22,19 @@ const menu = [
     image: "/Non veg starters.jpg",
     description: "Start your meal with our mouthwatering non-veg appetizers, perfect for sharing or enjoying solo.",
     items: [
-      "Chilli Chicken",
-      "Lollipop",
-      "Chicken Pakoda",
-      "Fish Fry",
-      "Pepper Chicken",
-      "Chicken Fry with Kaju",
-      "Tuna Fish Fry",
-      "Egg Bhurji with Pepper",
-      "Majestic Chicken",
-      "Chicken Liver Fry",
-      "Prawns Fry",
-      "Leg Piece Fry",
-      "Chicken Thokku Fry", 
+      { name: "Chilli Chicken", price: "€10.50" },
+      { name: "Lollipop", price: "€13.50" },
+      { name: "Chicken Pakoda", price: "€9.50" },
+      { name: "Fish Fry", price: "€12.00" },
+      { name: "Pepper Chicken", price: "€11.50" },
+      { name: "Chicken Fry with Kaju", price: "€12.50" },
+      { name: "Tuna Fish Fry", price: "€13.00" },
+      { name: "Egg Bhurji with Pepper", price: "€8.50" },
+      { name: "Majestic Chicken", price: "€14.50" },
+      { name: "Chicken Liver Fry", price: "€10.50" },
+      { name: "Prawns Fry", price: "€15.50" },
+      { name: "Leg Piece Fry", price: "€13.50" },
+      { name: "Chicken Thokku Fry", price: "€11.50" },
     ],
   },
   // Biryanis & Rice
@@ -44,11 +44,11 @@ const menu = [
     image: "/Biryani.jpg",
     description: "Savor our signature biryanis, each cooked to perfection with aromatic rice and your choice of vegetables, chicken, mutton, prawns, or egg.",
     items: [
-      "Veg Dum Biryani",
-      "Chicken Dum Biryani",
-      "Mutton Dum Biryani",
-      "Prawns Dum Biryani",
-      "Egg Dum Biryani",
+      { name: "Veg Dum Biryani", price: "€8.50" },
+      { name: "Chicken Dum Biryani", price: "€13.50" },
+      { name: "Mutton Dum Biryani", price: "€15.50" },
+      { name: "Prawns Dum Biryani", price: "€17.00" },
+      { name: "Egg Dum Biryani", price: "€10.50" },
     ],
   },
   {
@@ -56,14 +56,14 @@ const menu = [
     category: "Palav",
     description: "Enjoy our selection of fragrant palavs, from classic vegetable and chicken to unique regional specialties.",
     items: [
-      "Vegetable Palav",
-      "Chicken Palav",
-      "Mushroom Palav",
-      "Peas Palav",
-      "Soya Chunks Palav",
-      "Bhagara Rice",
-      "Pudina Rice",
-      "Egg Palav",
+      { name: "Vegetable Palav", price: "€7.50" },
+      { name: "Chicken Palav", price: "€11.50" },
+      { name: "Mushroom Palav", price: "€8.50" },
+      { name: "Peas Palav", price: "€8.00" },
+      { name: "Soya Chunks Palav", price: "€9.00" },
+      { name: "Bhagara Rice", price: "€9.50" },
+      { name: "Pudina Rice", price: "€8.50" },
+      { name: "Egg Palav", price: "€9.50" },
     ],
   },
   {
@@ -72,10 +72,10 @@ const menu = [
     image: "/Fried rice.jpg",
     description: "Satisfy your cravings with our selection of fried rice, made fresh to order.",
     items: [
-      "Chicken Fried Rice",
-      "Egg Fried Rice",
-      "Mushroom Fried Rice",
-      "Veg Fried Rice",
+      { name: "Chicken Fried Rice", price: "€10.50" },
+      { name: "Egg Fried Rice", price: "€8.50" },
+      { name: "Mushroom Fried Rice", price: "€9.00" },
+      { name: "Veg Fried Rice", price: "€8.00" },
     ],
   },
   {
@@ -84,9 +84,9 @@ const menu = [
     image: "/Mandi.jpg",
     description: "Try our special mandi rice platters, served with a variety of delicious accompaniments.",
     items: [
-      "Mandi Rice with Chicken Fry piece and Chicken Gravy with Afghani Chicken / Egg",
-      "Mandi Rice with Mutton Curry / Mutton Fry with Egg",
-      "Mixed Mandi",
+      { name: "Mandi Rice with Chicken Fry piece and Chicken Gravy with Afghani Chicken / Egg", price: "€18.50" },
+      { name: "Mandi Rice with Mutton Curry / Mutton Fry with Egg", price: "€20.50" },
+      { name: "Mixed Mandi", price: "€22.00" },
     ],
   },
   {
@@ -94,7 +94,7 @@ const menu = [
     category: "Veg Combo",
     description: "Enjoy a wholesome vegetarian combo meal for a complete dining experience.",
     items: [
-      "White Rice / Dal / Rasam / Curd / Pickle / Sweet",
+      { name: "White Rice / Dal / Rasam / Curd / Pickle / Sweet", price: "€9.50" },
     ],
   },
   // Curries & Gravies
@@ -104,13 +104,13 @@ const menu = [
     image: "/Curry.jpg",
     description: "Discover a range of rich, comforting curries, each simmered with authentic spices and fresh ingredients.",
     items: [
-      "Chicken Curry",
-      "Mutton Curry",
-      "Egg Curry",
-      "Veg Curry",
-      "Dal",
-      "Fish Curry",
-      "Prawns Curry",
+      { name: "Chicken Curry", price: "€13.50" },
+      { name: "Mutton Curry", price: "€15.50" },
+      { name: "Egg Curry", price: "€9.50" },
+      { name: "Veg Curry", price: "€8.50" },
+      { name: "Dal", price: "€5.50" },
+      { name: "Fish Curry", price: "€14.50" },
+      { name: "Prawns Curry", price: "€17.00" },
     ],
   },
   {
@@ -118,9 +118,9 @@ const menu = [
     category: "Egg Items",
     description: "Try our creative egg-based dishes, from curries to stir-fries.",
     items: [
-      "Egg Kheema Curry",
-      "Egg Anda Curry",
-      "Egg Curry",
+      { name: "Egg Kheema Curry", price: "€10.50" },
+      { name: "Egg Anda Curry", price: "€9.50" },
+      { name: "Egg Curry", price: "€9.50" },
     ],
   },
   {
@@ -128,12 +128,12 @@ const menu = [
     category: "Chicken Specials",
     description: "Explore our chef's chicken specials, each bursting with unique flavors.",
     items: [
-      "Chicken Keema Biryani",
-      "Chicken Breast Biryani",
-      "Chicken Piece Biryani",
-      "Chicken Fried Piece Biryani",
-      "Chicken Broth Rice",
-      "Hoskote Chicken Biryani",
+      { name: "Chicken Keema Biryani", price: "€14.50" },
+      { name: "Chicken Breast Biryani", price: "€15.50" },
+      { name: "Chicken Piece Biryani", price: "€13.50" },
+      { name: "Chicken Fried Piece Biryani", price: "€16.50" },
+      { name: "Chicken Broth Rice", price: "€12.50" },
+      { name: "Hoskote Chicken Biryani", price: "€14.00" },
     ],
   },
   {
@@ -141,7 +141,7 @@ const menu = [
     category: "Ragi Ball",
     description: "Experience traditional favorites like ragi ball and sarva, a true taste of home.",
     items: [
-      "Ragi Ball / Chicken Gravy / Mutton Gravy / Egg Gravy",
+      { name: "Ragi Ball / Chicken Gravy / Mutton Gravy / Egg Gravy", price: "€8.50" },
     ],
   },
   {
@@ -149,9 +149,9 @@ const menu = [
     category: "Butter Specials",
     description: "Indulge in our creamy butter specials, a true delight for every food lover.",
     items: [
-      "Paneer Butter Masala",
-      "Chicken Butter Masala",
-      "Palak Paneer",
+      { name: "Paneer Butter Masala", price: "€13.50" },
+      { name: "Chicken Butter Masala", price: "€15.50" },
+      { name: "Palak Paneer", price: "€12.50" },
     ],
   },
   // Breads & Rolls
@@ -161,10 +161,10 @@ const menu = [
     image: "/Naans.jpg",
     description: "Pair your meal with our soft naans, rotis, and delicious breads, fresh from the tandoor.",
     items: [
-      "Butter Naan",
-      "Kulcha",
-      "Roti",
-      "Paratha",
+      { name: "Butter Naan", price: "€2.00" },
+      { name: "Kulcha", price: "€2.50" },
+      { name: "Roti", price: "€1.50" },
+      { name: "Paratha", price: "€2.20" },
     ],
   },
   {
@@ -172,8 +172,8 @@ const menu = [
     category: "Rolls",
     description: "Enjoy our tasty rolls, perfect for a quick bite or a satisfying snack.",
     items: [
-      "Chicken Roll",
-      "Egg Roll",
+      { name: "Chicken Roll", price: "€8.50" },
+      { name: "Egg Roll", price: "€5.50" },
     ],
   },
   // Noodles & Pasta
@@ -182,8 +182,8 @@ const menu = [
     category: "Noodles",
     description: "Try our flavorful noodles, stir-fried to perfection.",
     items: [
-      "Egg Noodles",
-      "Chicken Noodles",
+      { name: "Egg Noodles", price: "€7.50" },
+      { name: "Chicken Noodles", price: "€9.50" },
     ],
   },
   {
@@ -191,8 +191,8 @@ const menu = [
     category: "Pasta",
     description: "Savor our creamy pasta dishes, available in both veg and chicken options.",
     items: [
-      "Creamy Pasta with Breast Chicken",
-      "Veg Creamy Pasta",
+      { name: "Creamy Pasta with Breast Chicken", price: "€13.50" },
+      { name: "Veg Creamy Pasta", price: "€10.50" },
     ],
   },
   // Drinks & Sweets
@@ -201,8 +201,8 @@ const menu = [
     category: "Lassi & Buttermilk",
     description: "Refresh yourself with our cool lassis and buttermilk.",
     items: [
-      "Lassi",
-      "Butter Milk",
+      { name: "Lassi", price: "€3.80" },
+      { name: "Butter Milk", price: "€2.80" },
     ],
   },
   {
@@ -211,9 +211,9 @@ const menu = [
     image: "/Milkshake.webp",
     description: "Try our delicious milkshakes in a variety of flavors.",
     items: [
-      "Pista Milkshake",
-      "Vanilla Milkshake",
-      "Chocolate Milkshake",
+      { name: "Pista Milkshake", price: "€5.80" },
+      { name: "Vanilla Milkshake", price: "€4.80" },
+      { name: "Chocolate Milkshake", price: "€5.30" },
     ],
   },
   {
@@ -221,11 +221,11 @@ const menu = [
     category: "Fruit Juices",
     description: "Quench your thirst with our selection of fresh fruit juices.",
     items: [
-      "Orange Juice",
-      "Pineapple Juice",
-      "Vegetable Juice",
-      "Muskmelon Juice",
-      "Lemon Juice",
+      { name: "Orange Juice", price: "€4.30" },
+      { name: "Pineapple Juice", price: "€4.80" },
+      { name: "Vegetable Juice", price: "€5.30" },
+      { name: "Muskmelon Juice", price: "€4.60" },
+      { name: "Lemon Juice", price: "€3.30" },
     ],
   },
   {
@@ -233,8 +233,8 @@ const menu = [
     category: "Tea & Coffee",
     description: "Enjoy a hot cup of tea or coffee to complete your meal.",
     items: [
-      "Tea",
-      "Coffee",
+      { name: "Tea", price: "€1.40" },
+      { name: "Coffee", price: "€1.90" },
     ],
   },
   {
@@ -243,7 +243,7 @@ const menu = [
     image: "/Sweet.jpg",
     description: "Finish your meal with a sweet treat.",
     items: [
-      "Kheer",
+      { name: "Kheer", price: "€3.80" },
     ],
   },
 ];
@@ -293,10 +293,12 @@ export default function Menu() {
   // Add item to cart with quantity
   const handleAddToCart = (itemName, category) => {
     const qty = quantities[itemName] || 1;
+    const item = menu.find(section => section.category === category).items.find(i => i.name === itemName);
+    
     addToCart({
       name: itemName,
       desc: `From ${category}`,
-      price: 0 // You can add prices later if needed
+      price: item.price // Include the price
     }, qty);
     
     // Reset quantity and close selection after adding to cart
@@ -369,15 +371,18 @@ export default function Menu() {
             <p className="text-gray-600 text-center mb-4 italic">{section.description}</p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {section.items.map((item) => {
-                const qty = quantities[item] || 1;
-                const isSelected = selectedItems[item];
+                const qty = quantities[item.name] || 1;
+                const isSelected = selectedItems[item.name];
                 return (
-                  <li key={item} className={`text-lg font-medium text-gray-800 bg-green-50 rounded px-4 py-3 shadow-sm transition-all duration-200 ${isSelected ? 'ring-2 ring-green-400 bg-green-100' : 'hover:bg-green-100'}`}>
+                  <li key={item.name} className={`text-lg font-medium text-gray-800 bg-green-50 rounded px-4 py-3 shadow-sm transition-all duration-200 ${isSelected ? 'ring-2 ring-green-400 bg-green-100' : 'hover:bg-green-100'}`}>
                     <div 
                       className="flex justify-between items-center mb-2 cursor-pointer"
-                      onClick={() => toggleItemSelection(item)}
+                      onClick={() => toggleItemSelection(item.name)}
                     >
-                      <span className="flex-1 font-bold text-green-800">{item}</span>
+                      <div className="flex-1">
+                        <span className="font-bold text-green-800">{item.name}</span>
+                        <div className="text-sm text-green-600 font-semibold mt-1">{item.price}</div>
+                      </div>
                       <span className="text-green-600 text-sm">
                         {isSelected ? '▼' : '▶'}
                       </span>
@@ -388,25 +393,25 @@ export default function Menu() {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-2">
                             <button
-                              onClick={() => updateQuantity(item, qty - 1)}
+                              onClick={() => updateQuantity(item.name, qty - 1)}
                               className="w-8 h-8 bg-green-600 hover:bg-green-700 text-white rounded-full flex items-center justify-center font-bold text-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-300"
-                              aria-label={`Decrease quantity for ${item}`}
+                              aria-label={`Decrease quantity for ${item.name}`}
                             >
                               -
                             </button>
                             <span className="w-8 text-center font-bold text-green-700">{qty}</span>
                             <button
-                              onClick={() => updateQuantity(item, qty + 1)}
+                              onClick={() => updateQuantity(item.name, qty + 1)}
                               className="w-8 h-8 bg-green-600 hover:bg-green-700 text-white rounded-full flex items-center justify-center font-bold text-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-300"
-                              aria-label={`Increase quantity for ${item}`}
+                              aria-label={`Increase quantity for ${item.name}`}
                             >
                               +
                             </button>
                           </div>
                           <button
-                            onClick={() => handleAddToCart(item, section.category)}
+                            onClick={() => handleAddToCart(item.name, section.category)}
                             className="ml-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-sm font-bold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-300"
-                            aria-label={`Add ${qty} ${item} to cart`}
+                            aria-label={`Add ${qty} ${item.name} to cart`}
                           >
                             Add ({qty})
                           </button>

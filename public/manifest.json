@@ -1,0 +1,16 @@
+{
+  "short_name": "SouthSpice",
+  "name": "South Spice Cloud Kitchen",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "64x64"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#22c55e",
+  "display": "standalone",
+  "theme_color": "#22c55e",
+  "description": "Authentic South Indian food delivered to your door."
+} 
